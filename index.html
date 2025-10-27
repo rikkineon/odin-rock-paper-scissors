@@ -25,29 +25,37 @@
             let rock = "Rock";
             let paper = "Paper";
             let scissors = "Scissors";
+            let userInput;
+            let finalCompChoice;
 
             function getComputerChoice() {
 
             let randomNumber = (Math.random() * 10);
 
-            randomNumber <= 3.33 ? console.log(rock) : 
-            randomNumber >= 3.34 && randomNumber <= 6.67 ? console.log(paper) :
-            console.log(scissors);
+            finalCompChoice = 
+            randomNumber <= 3.33 ? "rock" :
+            randomNumber >= 3.34 && randomNumber <= 6.67 ? "paper" :
+            "scissors";
+
+            return finalCompChoice;
+
+            console.log(finalCompChoice);
 
             }
-        
+
             // FUNCTION: getHumanChoice
             // Prompt user for input
             // Return value of user input
 
             function getHumanChoice() {
 
-                let userInput = prompt("Choose rock, paper, or scissors");
+                userInput = prompt("Choose rock, paper, or scissors").toLowerCase();
+
                 console.log(userInput);
 
-                // Ensure that userInput is read the same regardless of user input
-                userInput = `${userInput}`.toLowerCase();
-        
+                return userInput;
+
+               
             }
 
 
@@ -73,62 +81,30 @@
 
                humanChoice = getHumanChoice;
                computerChoice = getComputerChoice;
+               
+               switch (humanChoice === "paper") {
+                case finalCompChoice === "scissors" :
+                    console.log("You lose! Scissors shred paper.");
+                    break;
+                case finalCompChoice === "rock" :
+                    console.log("You win! Paper smothers rock.");
+                    break;
+                case finalCompChoice === "paper" :
+                    console.log("Both paper. It's a tie!")
+                    break;
+
+               }
+
 
 
                 // Set conditions for winning and losing
 
-                switch (getHumanChoice === "scissors") {
-                    case computerChoice === paper:
-                        console.log("You win! Scissors shreds paper.")
-                        break;
-                    
-                    case computerChoice === rock:
-                        console.log("You lose! Rock clobbers scissors.")
-                        break;
-
-                    case computerChoice === scissors:
-                        console.log("Both scissors, it's a draw!")
-                        break;
-                }
-
-                switch (humanChoice === rock) {
-                    case computerChoice === paper: 
-                    console.log("You lose! Paper smothers rock.")
-                    break;
-
-                    case computerChoice === scissors: 
-                    console.log("You win! Rock smashes scissors.")
-                    break;
-
-                    case computerChoice === rock: 
-                    console.log("Both rock, it's a draw!")
-                    break;
-
-                }
-
-                switch (humanChoice === paper) {
-                    case computerChoice === scissors: 
-                    console.log("You lose! Scissors slay paper.")
-                    break;
-
-                    case computerChoice === rock: 
-                    console.log("You win! Paper covers rock.")
-                    break;
-
-                    case computerChoice === paper: 
-                    console.log("Both paper, it's a draw!")
-                    break;
-                }
-
-
-
-            }
+            } 
 
             const humanSelection = getHumanChoice();
             const computerSelection = getComputerChoice();
 
             playRound(humanSelection, computerSelection);
-
 
 
     </script>
