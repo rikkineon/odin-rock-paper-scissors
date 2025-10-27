@@ -22,12 +22,13 @@
             // If randomNumber >= 3.34 AND <= 6.67, return PAPER
             // Else, return SCISSORS
 
-            function getComputerChoice() {
-
-            let randomNumber = (Math.random() * 10);
             let rock = "Rock";
             let paper = "Paper";
             let scissors = "Scissors";
+
+            function getComputerChoice() {
+
+            let randomNumber = (Math.random() * 10);
 
             randomNumber <= 3.33 ? console.log(rock) : 
             randomNumber >= 3.34 && randomNumber <= 6.67 ? console.log(paper) :
@@ -67,18 +68,57 @@
 
                 // Declare variables
 
-                let rock;
-                let paper;
-                let scissors;
-
                 // Read user input
                 // Read computer input
 
-                humanChoice = getHumanChoice;
-                computerChoice = getComputerChoice;
+               humanChoice = getHumanChoice;
+               computerChoice = getComputerChoice;
 
 
-                // Set conditions for winning
+                // Set conditions for winning and losing
+
+                switch (getHumanChoice === "scissors") {
+                    case computerChoice === paper:
+                        console.log("You win! Scissors shreds paper.")
+                        break;
+                    
+                    case computerChoice === rock:
+                        console.log("You lose! Rock clobbers scissors.")
+                        break;
+
+                    case computerChoice === scissors:
+                        console.log("Both scissors, it's a draw!")
+                        break;
+                }
+
+                switch (humanChoice === rock) {
+                    case computerChoice === paper: 
+                    console.log("You lose! Paper smothers rock.")
+                    break;
+
+                    case computerChoice === scissors: 
+                    console.log("You win! Rock smashes scissors.")
+                    break;
+
+                    case computerChoice === rock: 
+                    console.log("Both rock, it's a draw!")
+                    break;
+
+                }
+
+                switch (humanChoice === paper) {
+                    case computerChoice === scissors: 
+                    console.log("You lose! Scissors slay paper.")
+                    break;
+
+                    case computerChoice === rock: 
+                    console.log("You win! Paper covers rock.")
+                    break;
+
+                    case computerChoice === paper: 
+                    console.log("Both paper, it's a draw!")
+                    break;
+                }
 
 
 
