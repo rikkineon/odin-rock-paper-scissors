@@ -28,7 +28,6 @@
             let rock = "Rock";
             let paper = "Paper";
             let scissors = "Scissors";
-            console.log(randomNumber);
 
             randomNumber <= 3.33 ? console.log(rock) : 
             randomNumber >= 3.34 && randomNumber <= 6.67 ? console.log(paper) :
@@ -43,9 +42,11 @@
             function getHumanChoice() {
 
                 let userInput = prompt("Choose rock, paper, or scissors");
+                console.log(userInput);
 
                 // Ensure that userInput is read the same regardless of user input
-                console.log( `${userInput}`.toLowerCase() );
+                userInput = `${userInput}`.toLowerCase();
+        
             }
 
 
@@ -64,11 +65,29 @@
                 // Accept player choices as arguments
                 // humanChoice must be case insensitive
 
-                getHumanChoice();
+                // Declare variables
+
+                let rock;
+                let paper;
+                let scissors;
+
+                // Read user input
+                // Read computer input
+
+                humanChoice = getHumanChoice;
+                computerChoice = getComputerChoice;
+
+
+                // Set conditions for winning
+
+
 
             }
 
-            playRound();
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+
+            playRound(humanSelection, computerSelection);
 
 
 
