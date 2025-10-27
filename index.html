@@ -43,10 +43,32 @@
             function getHumanChoice() {
 
                 let userInput = prompt("Choose rock, paper, or scissors");
-                console.log(userInput);
+
+                // Ensure that userInput is read the same regardless of user input
+                console.log( `${userInput}`.toLowerCase() );
             }
 
-            getHumanChoice();
+
+            // Declare player scores and initialize at 0
+
+            let humanScore;
+            humanScore === 0;
+            
+            let computerScore;
+            computerScore === 0;
+
+            // FUNCTION: playRound with choice parameters
+
+            function playRound(humanChoice, computerChoice) {
+                
+                // Accept player choices as arguments
+                // humanChoice must be case insensitive
+
+                getHumanChoice();
+
+            }
+
+            playRound();
 
 
 
