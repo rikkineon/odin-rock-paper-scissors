@@ -37,9 +37,9 @@
             randomNumber >= 3.34 && randomNumber <= 6.67 ? "paper" :
             "scissors";
 
-            return finalCompChoice;
+            console.log(finalCompChoice); 
 
-            console.log(finalCompChoice);
+            return finalCompChoice;
 
             }
 
@@ -54,8 +54,7 @@
                 console.log(userInput);
 
                 return userInput;
-
-               
+ 
             }
 
 
@@ -78,11 +77,8 @@
 
                 // Read user input
                 // Read computer input
-
-               humanChoice = getHumanChoice;
-               computerChoice = getComputerChoice;
                
-               switch (humanChoice === "paper") {
+               switch (userInput === "paper") {
                 case finalCompChoice === "scissors" :
                     console.log("You lose! Scissors shred paper.");
                     break;
@@ -92,6 +88,8 @@
                 case finalCompChoice === "paper" :
                     console.log("Both paper. It's a tie!")
                     break;
+                
+                    default: alert("Oops");
 
                }
 
