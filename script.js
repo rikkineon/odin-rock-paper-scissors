@@ -54,7 +54,7 @@
 
             // FUNCTION: playGame
 
-            function playGame (rounds) {
+            function playGame () {
             
                  // Declare player scores and initialize at 0
 
