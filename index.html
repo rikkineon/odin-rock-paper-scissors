@@ -75,7 +75,7 @@
                     
                     let computerScore = 0;
 
-                    // FUNCTION update scores
+                    // FUNCTION update and display scores
 
                     function updateHumanScore (condition) {
 
@@ -90,6 +90,12 @@
                         console.log("Your score: " + humanScore);
                         console.log("Computer score: " + currentComputerScore);
 
+                    }
+
+                    function scoreIsDraw (condition) {
+
+                        console.log("Your score: " + humanScore);
+                        console.log("Computer score: " + computerScore);
                     }
 
                 function playRound(humanChoice, computerChoice) {
@@ -114,7 +120,8 @@
                                 updateHumanScore(true);
                                 break;
                             case finalCompChoice === "vs paper" :
-                                console.log("Both paper. It's a tie!")
+                                console.log("Both paper. It's a tie!");
+                                scoreIsDraw(true);
                                 break;
                             }
 
@@ -135,6 +142,7 @@
 
                             case finalCompChoice === "vs rock" : 
                             console.log("Both rock. It's a tie!");
+                            scoreIsDraw(true);
                             break;
                             }
 
@@ -155,6 +163,7 @@
 
                             case finalCompChoice === "vs scissors" :
                                 console.log("Both scissors. It's a tie!");
+                                scoreIsDraw(true);
                                 break;      
                                 }
 
