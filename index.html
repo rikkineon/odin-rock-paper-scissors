@@ -78,22 +78,22 @@
                     function updateHumanScore (condition) {
 
                         const currentHumanScore = ++humanScore;
-                        console.log("Your score: " + currentHumanScore);
-                        console.log("Computer score: " + computerScore);
+                        console.log("YOU: " + currentHumanScore);
+                        console.log("COMPUTER: " + computerScore);
                     }
 
                     function updateComputerScore (condition) {
 
                         const currentComputerScore = ++computerScore;
-                        console.log("Your score: " + humanScore);
-                        console.log("Computer score: " + currentComputerScore);
+                        console.log("YOU: " + humanScore);
+                        console.log("COMPUTER: " + currentComputerScore);
 
                     }
 
                     function scoreIsDraw (condition) {
 
-                        console.log("Your score: " + humanScore);
-                        console.log("Computer score: " + computerScore);
+                        console.log("YOU: " + humanScore);
+                        console.log("COMPUTER: " + computerScore);
                     }
 
                 function playRound(humanChoice, computerChoice) {
@@ -110,15 +110,15 @@
                     
                         switch (userInput === "paper") {
                             case finalCompChoice === "vs scissors" :
-                                console.log("You lose! Scissors shred paper.");
+                                console.log("YOU LOSE. Scissors shred paper.");
                                 updateComputerScore(true);
                                 break;
                             case finalCompChoice === "vs rock" :
-                                console.log("You win! Paper smothers rock.");
+                                console.log("YOU WIN! Paper smothers rock.");
                                 updateHumanScore(true);
                                 break;
                             case finalCompChoice === "vs paper" :
-                                console.log("Both paper. It's a tie!");
+                                console.log("DRAW! Both paper.");
                                 scoreIsDraw(true);
                                 break;
                             }
@@ -129,17 +129,17 @@
 
                         switch (userInput === "rock") {
                             case finalCompChoice === "vs scissors" : 
-                            console.log("You win! Rock crushes scissors.");
+                            console.log("YOU WIN! Rock crushes scissors.");
                             updateHumanScore(true);
                             break;
 
                             case finalCompChoice === "vs paper" : 
-                            console.log("You lose! Paper wraps rock.");
+                            console.log("YOU LOSE. Paper wraps rock.");
                             updateComputerScore(true);
                             break;
 
                             case finalCompChoice === "vs rock" : 
-                            console.log("Both rock. It's a tie!");
+                            console.log("DRAW! Both rock.");
                             scoreIsDraw(true);
                             break;
                             }
@@ -150,17 +150,17 @@
 
                         switch (userInput === "scissors") {
                             case finalCompChoice === "vs rock" :
-                                console.log("You lose! Rock clobbers scissors.");
+                                console.log("YOU LOSE. Rock clobbers scissors.");
                                 updateComputerScore(true);
                             break;
 
                             case finalCompChoice === "vs paper" :
-                                console.log("You win! Scissors mince paper.");
+                                console.log("YOU WIN! Scissors mince paper.");
                                 updateHumanScore(true);
                                 break;
 
                             case finalCompChoice === "vs scissors" :
-                                console.log("Both scissors. It's a tie!");
+                                console.log("DRAW! Both scissors.");
                                 scoreIsDraw(true);
                                 break;      
                                 }
@@ -176,10 +176,10 @@
                     function declareWinner() {
 
                         humanScore > computerScore ? 
-                            console.log("You win! Well done.") :
+                            console.log("YOU WIN! Well done!") :
                             computerScore > humanScore ?
-                            console.log("The computer wins! Better luck next time.") :
-                            console.log("The final outcome is a draw!");
+                            console.log("COMPUTER WINS! Better luck next time.") :
+                            console.log("DRAW! No winner, no loser.");
 
                         console.log("FINAL SCORE: " + humanScore + " you, " + computerScore + " computer");
                        
