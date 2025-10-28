@@ -60,7 +60,7 @@
 
             // FUNCTION: playGame
 
-            function playGame () {
+            function playGame (functionToCall, numberOfTimes) {
             
                  // Declare player scores and initialize at 0
 
@@ -152,12 +152,10 @@
                                 }
 
                       }
-                    
-
                             userInput === "paper" ? choosePaper(true) :
                             userInput === "rock" ? chooseRock(true) :
                             userInput === "scissors" ? chooseScissors(true) :
-                            alert("Oops");
+                            alert("Oops, how did you get here?");
 
                     }        
 
@@ -165,11 +163,7 @@
                  
 
                 }
-
-                // Set conditions for winning and losing
-
-            
-
+        
            const humanSelection = getHumanChoice();
            const computerSelection = getComputerChoice();
 
