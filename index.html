@@ -9,23 +9,31 @@
 
     <script>
 
-        // Declare global variables that can be used in multiple functions
-
-         let userInput;
-         let finalCompChoice;
-         let isWinner;
-
       // Declare function 'getComputerChoice' that randomly either:
         // Returns string value "rock"
         // Returns string value "paper"
         // Returns string value "scissors"
 
         // FOR FUNCTION getComputerChoice
+          // Declare variables with string values
          // Assign variable randomNumber to randomly generate a number between 0 and 1 and multiply that number * 10
          // Set condition:
-            // If randomNumber <= 3.33, finalCompChoice = ROCK
-            // If randomNumber >= 3.34 AND <= 6.67, finalCompChoice = PAPER
-            // Else, finalCompChoice = SCISSORS
+            // If randomNumber <= 3.33, return ROCK
+            // If randomNumber >= 3.34 AND <= 6.67, return PAPER
+            // Else, return SCISSORS
+
+        let userInput;
+        let finalCompChoice;
+        let isWinner;
+        let compWinner;
+
+        // Declare player scores and initialize at 0
+
+        let humanScore = 0;
+        
+        let computerScore = 0;
+
+
 
             function getComputerChoice() {
 
@@ -44,8 +52,6 @@
 
             // FUNCTION: getHumanChoice
             // Prompt user for input
-            // Convert ANY user input to lowercase to allow case insensitivity 
-            // Log user input
             // Return value of user input
 
             function getHumanChoice() {
@@ -57,15 +63,6 @@
                 return userInput;
  
             }
-
-
-            // Declare player scores and initialize at 0
-
-            let humanScore;
-            humanScore === 0;
-            
-            let computerScore;
-            computerScore === 0;
 
             // FUNCTION: playRound with choice parameters
 
@@ -83,10 +80,12 @@
                
                 switch (userInput === "paper") {
                     case finalCompChoice === "vs scissors" :
-                        console.log("You lose! Scissors shred paper.") && (isWinner = true) ;
+                        console.log("You lose! Scissors shred paper.") 
+                          && (compWinner = true);
                         break;
                     case finalCompChoice === "vs rock" :
-                        console.log("You win! Paper smothers rock.");
+                        console.log("You win! Paper smothers rock.")
+                          && (isWinner = true);
                         break;
                     case finalCompChoice === "vs paper" :
                         console.log("Both paper. It's a tie!")
@@ -128,13 +127,6 @@
                 }
 
 
-               }
-
-               function awardPoint (isWinner) {
-
-
-
-
 
                }
 
@@ -149,10 +141,43 @@
 
             } 
 
+        function keepScore () {
+
+            // Determine: is there a winner of this round?
+              // If yes: Get winner
+                // if user, +1 userScore
+                // if computer, +1 computerScore
+              // else +0 to both scores
+                 // Show message "This round was a draw, no points awarded."
+
+          function userWins (isWinner) {
+
+            let newScore = ++humanScore;
+            console.log("Your score: " + newScore + " Computer Score: " + computerScore);
+            return newScore;
+
+          }
+
+          function compWins (compWinner) {
+
+            let newCompScore = (computerScore++);
+            return newCompScore;
+
+          }
+
+          isWinner = true ? userWins() :
+          compWinner = true ? compWins() :
+          console.log("This round was a draw, no points have been awarded.")
+
+
+        }
+
             const humanSelection = getHumanChoice();
             const computerSelection = getComputerChoice();
 
+
             playRound(humanSelection, computerSelection);
+            keepScore ();
 
 
     </script>
