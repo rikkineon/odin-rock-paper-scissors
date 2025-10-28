@@ -23,6 +23,8 @@
             // Else, return SCISSORS
 
         let userInput;
+        const userChooses = userInput;
+
         let finalCompChoice;
         let roundWinner;
 
@@ -35,9 +37,7 @@
             randomNumber >= 3.34 && randomNumber <= 6.67 ? "vs paper" :
             "vs scissors";
 
-            const compChooses = finalCompChoice;
-
-            console.log(compChooses); 
+            console.log(finalCompChoice); 
 
             }
 
@@ -49,16 +49,15 @@
 
                 userInput = prompt("Choose rock, paper, or scissors").toLowerCase();
 
-                const userChooses = userInput;
-
-                console.log(userChooses);
-
+                console.log(userInput);
  
             }
 
             function rePrompt() {
 
                 userInput = prompt("Choose rock, paper, or scissors " + "round ");
+                console.log(userInput);
+                console.log(finalCompChoice)
             }
 
 
