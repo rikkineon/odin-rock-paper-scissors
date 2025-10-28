@@ -116,10 +116,14 @@
                 switch (userInput === "rock") {
                     case finalCompChoice === "vs scissors" : 
                     console.log("You win! Rock crushes scissors.");
+                    updateHumanScore(true);
                     break;
+
                     case finalCompChoice === "vs paper" : 
                     console.log("You lose! Paper wraps rock.");
+                    updateComputerScore(true);
                     break;
+
                     case finalCompChoice === "vs rock" : 
                     console.log("Both rock. It's a tie!");
                     break;
@@ -129,18 +133,15 @@
 
                function chooseScissors () {
 
-
-
                 switch (userInput === "scissors") {
                     case finalCompChoice === "vs rock" :
                         console.log("You lose! Rock clobbers scissors.");
-                        updateComputerScore();
-                        
+                        updateComputerScore(true);
                     break;
 
                     case finalCompChoice === "vs paper" :
                         console.log("You win! Scissors mince paper.");
-                        updateHumanScore();
+                        updateHumanScore(true);
                         break;
 
                     case finalCompChoice === "vs scissors" :
@@ -150,37 +151,16 @@
                     
                 }
 
-
-
                }
-
 
                userInput === "paper" ? choosePaper() :
                userInput === "rock" ? chooseRock() :
                userInput === "scissors" ? chooseScissors() :
                alert("Oops");
 
-
-
                 // Set conditions for winning and losing
 
-            } 
-
-            console.log("Your score: " + humanScore);
-            console.log("Computer score: " + computerScore);
-
-
-            // Determine: is there a winner of this round?
-              // If yes: Get winner
-                // if user, +1 userScore
-                // if computer, +1 computerScore
-              // else +0 to both scores
-                 // Show message "This round was a draw, no points awarded."
-
-        
-
-          
-        
+            }
 
            const humanSelection = getHumanChoice();
            const computerSelection = getComputerChoice();
