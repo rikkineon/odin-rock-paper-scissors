@@ -57,6 +57,11 @@
  
             }
 
+            function rePrompt() {
+
+                userInput = prompt("Choose rock, paper, or scissors " + "round ");
+            }
+
 
             // FUNCTION: playRound with choice parameters
 
@@ -161,6 +166,10 @@
 
                     }      
                     
+                 playRound(humanSelection, computerSelection);
+
+                 rePrompt();
+        
                  playRound(humanSelection, computerSelection);
                  
 
