@@ -1,19 +1,5 @@
-// Declare function 'getComputerChoice' that randomly either:
-        // Returns string value "rock"
-        // Returns string value "paper"
-        // Returns string value "scissors"
-
-        // FOR FUNCTION getComputerChoice
-          // Declare variables with string values
-         // Assign variable randomNumber to randomly generate a number between 0 and 1 and multiply that number * 10
-         // Set condition:
-            // If randomNumber <= 3.33, return ROCK
-            // If randomNumber >= 3.34 AND <= 6.67, return PAPER
-            // Else, return SCISSORS
 
         let userInput;
-        const userChooses = userInput;
-
         let finalCompChoice;
         let roundWinner;
 
@@ -27,19 +13,14 @@
             "vs scissors";
 
             console.log(finalCompChoice); 
-
             }
 
-            // FUNCTION: getHumanChoice
-            // Prompt user for input
-            // Return value of user input
-
+  
             function getHumanChoice() {
 
                 userInput = prompt("Choose rock, paper, or scissors").toLowerCase();
 
                 console.log(userInput);
- 
             }
 
             function rePrompt() {
@@ -50,19 +31,12 @@
             }
 
 
-            // FUNCTION: playRound with choice parameters
-
-            // FUNCTION: playGame
 
             function playGame () {
-            
-                 // Declare player scores and initialize at 0
 
                     let humanScore = 0;
                     
                     let computerScore = 0;
-
-                    // FUNCTION update and display scores
 
                     function updateHumanScore (condition) {
 
@@ -76,7 +50,6 @@
                         const currentComputerScore = ++computerScore;
                         console.log("YOU: " + humanScore);
                         console.log("COMPUTER: " + currentComputerScore);
-
                     }
 
                     function scoreIsDraw (condition) {
@@ -87,13 +60,6 @@
 
                 function playRound(humanChoice, computerChoice) {
                 
-                // Accept player choices as arguments
-                // humanChoice must be case insensitive
-
-                // Declare variables
-
-                // Read user input
-                // Read computer input
 
                     function choosePaper(condition) {
                     
@@ -111,7 +77,6 @@
                                 scoreIsDraw(true);
                                 break;
                             }
-
                     }
 
                     function chooseRock(condition) {
@@ -132,7 +97,6 @@
                             scoreIsDraw(true);
                             break;
                             }
-
                     }
 
                     function chooseScissors(condition) {
@@ -153,13 +117,11 @@
                                 scoreIsDraw(true);
                                 break;      
                                 }
-
                       }
                             userInput === "paper" ? choosePaper(true) :
                             userInput === "rock" ? chooseRock(true) :
                             userInput === "scissors" ? chooseScissors(true) :
                             console.log("No points awarded!");
-
                     }     
                     
                     function declareWinner() {
@@ -170,24 +132,19 @@
                             console.log("COMPUTER WINS! Better luck next time.") :
                             console.log("DRAW! No winner, no loser.");
 
-                        console.log("FINAL SCORE: " + humanScore + " you, " + computerScore + " computer");
-                       
+                        console.log("FINAL SCORE: " + humanScore + " you, " + computerScore + " computer");     
                     }
                     
                  playRound(humanSelection, computerSelection);
-
                  rePrompt();
         
                  playRound(humanSelection, computerSelection);
-
                  rePrompt();
         
                  playRound(humanSelection, computerSelection);
-
                  rePrompt();
         
                  playRound(humanSelection, computerSelection);
-
                  rePrompt();
 
                  playRound(humanSelection, computerSelection);
