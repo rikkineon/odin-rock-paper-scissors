@@ -171,7 +171,19 @@
                             userInput === "scissors" ? chooseScissors(true) :
                             alert("Oops, how did you get here?");
 
-                    }      
+                    }     
+                    
+                    function declareWinner() {
+
+                        humanScore > computerScore ? 
+                            console.log("You win! Well done.") :
+                            computerScore > humanScore ?
+                            console.log("The computer wins! Better luck next time.") :
+                            console.log("The final outcome is a draw!");
+
+                        console.log("FINAL SCORE: " + humanScore + " you, " + computerScore + " computer");
+                       
+                    }
                     
                  playRound(humanSelection, computerSelection);
 
@@ -190,6 +202,9 @@
                  rePrompt();
 
                  playRound(humanSelection, computerSelection);
+
+                 declareWinner();
+
                 }
         
            const humanSelection = getHumanChoice();
