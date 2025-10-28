@@ -49,9 +49,11 @@
 
                 userInput = prompt("Choose rock, paper, or scissors").toLowerCase();
 
+                const userChooses = userInput;
+
                 console.log(userInput);
 
-                return userInput;
+                return userChooses;
  
             }
 
@@ -60,7 +62,7 @@
 
             // FUNCTION: playGame
 
-            function playGame (functionToCall, numberOfTimes) {
+            function playGame (rounds) {
             
                  // Declare player scores and initialize at 0
 
@@ -157,9 +159,9 @@
                             userInput === "scissors" ? chooseScissors(true) :
                             alert("Oops, how did you get here?");
 
-                    }        
-
-                    playRound(humanSelection, computerSelection);
+                    }      
+                    
+                 playRound(humanSelection, computerSelection);
                  
 
                 }
@@ -167,8 +169,9 @@
            const humanSelection = getHumanChoice();
            const computerSelection = getComputerChoice();
 
-
-        playGame (); 
+        
+        
+        playGame();
 
     </script>
     
